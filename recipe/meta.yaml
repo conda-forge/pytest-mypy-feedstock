@@ -1,18 +1,18 @@
 {% set name = "pytest-mypy" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 5a5338cecff17f005b181546a13e282761754b481225df37f33d37f86ac5b304
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 14c746bd0db5e36618f2fda0ba61ddeb5dc52129ab3923a70f592f934c8887db
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -29,11 +29,11 @@ test:
     - pytest_mypy
 
 about:
-  home: "https://github.com/dbader/pytest-mypy"
+  home: https://github.com/dbader/pytest-mypy
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Mypy static type checker plugin for Pytest"
+  summary: Mypy static type checker plugin for Pytest
   doc_url: https://pypi.org/project/pytest-mypy/
   dev_url: https://github.com/dbader/pytest-mypy
 
