@@ -18,6 +18,7 @@ requirements:
   host:
     - pip
     - python >=3.4
+    - setuptools_scm
   run:
     - mypy >=0.500
     - pytest >=2.8
