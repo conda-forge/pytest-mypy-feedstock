@@ -17,13 +17,13 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.4
+    - python >=3.5
     - setuptools_scm
   run:
     - mypy >=0.500
-    - pytest >=2.8
+    - pytest >=3.5
     - filelock
-    - python >=3.4
+    - python >=3.5
 
 test:
   imports:
