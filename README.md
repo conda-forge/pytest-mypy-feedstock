@@ -5,11 +5,13 @@ Home: https://github.com/dbader/pytest-mypy
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytest-mypy-feedstock/blob/master/LICENSE.txt)
 
 Summary: Mypy static type checker plugin for Pytest
 
+Development: https://github.com/dbader/pytest-mypy
 
+Documentation: https://pypi.org/project/pytest-mypy/
 
 Current build status
 ====================
