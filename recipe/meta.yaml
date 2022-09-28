@@ -1,5 +1,5 @@
 {% set name = "pytest-mypy" %}
-{% set version = "0.8.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 63d418a4fea7d598ac40b659723c00804d16a251d90a5cfbca213eeba5aaf01c
+  sha256: e74d632685f15a39c31c551a9d8cec4619e24bd396245a6335c5db0ec6d17b6f
 
 build:
   noarch: python
