@@ -1,5 +1,5 @@
 {% set name = "pytest-mypy" %}
-{% set version = "0.8.0" %}
+{% set version = "0.10.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 63d418a4fea7d598ac40b659723c00804d16a251d90a5cfbca213eeba5aaf01c
+  sha256: f8458f642323f13a2ca3e2e61509f7767966b527b4d8adccd5032c3e7b4fd3db
 
 build:
   noarch: python
@@ -17,15 +17,33 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
-    - setuptools_scm
+    - python >=3.6
+    - setuptools >=61.0
+    - setuptools_scm >=7.1
+    - wheel >=0.40
   run:
-    - mypy >=0.500
-    - pytest >=3.5
-    - filelock
-    - python >=3.5
+    - attrs >=19.0
+    - filelock >=3.0
+    - mypy >=0.50
+    - pytest >=4.6
+    - python >=3.6
 
 test:
+  source_files:
+    - pyproject.toml
+    - tests
+  requires:
+    - pip
+    - mypy
+    - pytest >=4.6
+    - packaging
+    - pexpect
+    - pytest-cov
+    - pytest-randomly
+    - pytest-xdist
+  commands:
+    - pip check
+    - pytest -p no:mypy tests
   imports:
     - pytest_mypy
 
