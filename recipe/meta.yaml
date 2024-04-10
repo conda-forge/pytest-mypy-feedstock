@@ -33,6 +33,7 @@ test:
     - pyproject.toml
     - tests
   requires:
+    - pip
     - mypy
     - pytest >=4.6
     - packaging
@@ -41,6 +42,7 @@ test:
     - pytest-randomly
     - pytest-xdist
   commands:
+    - pip check
     - pytest -p no:mypy tests
   imports:
     - pytest_mypy
