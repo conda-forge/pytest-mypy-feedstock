@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f8458f642323f13a2ca3e2e61509f7767966b527b4d8adccd5032c3e7b4fd3db
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools >=61.0
     - setuptools_scm >=7.1
     - wheel >=0.40
@@ -26,7 +26,7 @@ requirements:
     - filelock >=3.0
     - mypy >=0.50
     - pytest >=4.6
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -41,6 +41,7 @@ test:
     - pytest-cov
     - pytest-randomly
     - pytest-xdist
+    - python {{ python_min }}
   commands:
     - pip check
     - pytest -p no:mypy tests
