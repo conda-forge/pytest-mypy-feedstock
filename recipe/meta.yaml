@@ -1,13 +1,13 @@
 {% set name = "pytest-mypy" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 3f5fcaff75c80dccc6b68cf5ecc28e1bbe71e95309469eb7a28bf408ce55c074
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: b9f4237c0311eec507c48986dde2d776f399c98fdb92dae5c93f96c19bcae0e4
 
 build:
   noarch: python
